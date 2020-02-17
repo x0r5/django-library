@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Name: {{ object }}</h1>
+
+  <p><strong>Date of Birth: </strong>{{ object.date_of_birth }}</p>
+  <p><strong>Date of Death: </strong> {{ object.date_of_death }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Books</h4>
+    {% for book in object.book_set.all %}
+      <hr>
+      <p>{{ book.title }}
+    {% endfor %}
+
+  </div>
+{% endblock %}
