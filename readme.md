@@ -8,4 +8,12 @@
     - `python3 manage.py makemigrations` && `python3 manage.py migrate`
     - `python3 manage.py runserver 0:3000`
 
-## MVC pattern in Django
+## MVC pattern
+- urls.py
+- models.py
+- views.py
+
+## Authentication
+- Logged in user
+    - `{{ user }}`
+    - `{{ user.is_authenticated }}`
