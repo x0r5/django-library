@@ -37,7 +37,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
             'fields': ('status', 'due_back', 'borrower')
         }),
     )
-    list_display = ('book', 'status', 'due_back', 'borrowergit')
+    list_display = ('book', 'status', 'due_back', 'borrower')
     
 
 admin.site.register(Author, AuthorAdmin)
