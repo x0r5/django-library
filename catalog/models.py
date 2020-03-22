@@ -54,17 +54,17 @@ class BookInstance(models.Model):
 
     language = models.CharField(max_length=2, choices=LANGUAGE,blank=True, default='en', help_text="Book language")
 
-    @property
-    def is_overdue(self):
-        if self.due_back and date.today() > self.due_back:
-            return True
-        return False
-
     class Meta:
         ordering = ['due_back']
 
     def __str__(self):
         return f'{self.id} ({self.book.title})'
+
+    @property
+    def is_overdue(self):
+        if self.due_back and self.due_back < date.today():
+            return True
+        return False
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
