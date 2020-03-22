@@ -17,3 +17,18 @@
 - Logged in user
     - `{{ user }}`
     - `{{ user.is_authenticated }}`
+
+## Permissions
+```python
+class BookInstance(models.Model):
+    ...
+    class Meta:
+        ...
+        permissions = (("can_mark_returned", "Set book as returned"),)  
+```
+- Current user's permissions
+    - `{{ perms.catalog.can_mark_returned }}` True or False
+- ```python
+    @permission_required('catalog.can_edit')
+    def my_view(request):
+```
